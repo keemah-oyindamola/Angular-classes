@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.main-div{
+    background-color: whitesmoke;
+    width: 100vw;
+    height: 10%;
+    display: flex;
+    align-items: center;
+}
+.main-div img{
+    height: 30px;
+    margin-left: 30px;
+}
+.main-div input{
+    width: 500px;
+    /* border-radius: 10px; */
+    height: 30px;
+    margin-left: 20px;
+}
+.main-div p{
+    margin-left: 480px;
+    
+}
+.main-div button{
+    margin-left: 10px;
+    color: blue;
+    border: 1px solid blue;
+    width: 150px;
+    height: 30px;
+    background-color: white;
+}

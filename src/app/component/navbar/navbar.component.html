@@ -1,0 +1,19 @@
+<div>
+    <div class="main-div" *ngIf="currentUser == null">
+        <img src="https://media.dev.to/cdn-cgi/image/quality=100/https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png"
+        alt="">
+    <input placeholder="Search.          Powered by @Algolia"    type="text" name="" id="">
+
+     <p href="" routerLink="login">Log in</p>
+    <button 
+    routerLink="signup">Create account</button>
+    </div>
+
+
+    <div *ngIf="currentUser !== null">
+        <button (click)="logout()">Log out</button>
+    </div>
+</div>
+
+<h1>{{counter}}</h1>
+<!-- <button (click)="addUp()">Click</button> -->

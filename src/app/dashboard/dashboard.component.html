@@ -1,0 +1,73 @@
+<p>dashboard works!</p>
+<!-- <span (click)="displayMycart()" class="material-symbols-outlined">
+    shopping_cart
+</span> -->
+<span (click)=" toggleCartVisibility()" class="material-symbols-outlined">
+    shopping_cart
+</span>
+<!-- <section *ngIf="displayCart !== null" class="cart-section"> -->
+    <section class="cart-section" *ngIf="isCartVisible">
+        <h2>Your Cart</h2>
+        <div *ngIf="cart.length > 0; else emptyCart">
+            <ul>
+                <li>
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col"></th>
+                            <th scope="col">Product Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Qty</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of cart, let i=index">
+                                <td>{{ i + 1 }}</td>
+                                <td><img src="http://localhost/phpclass/admin/{{item.product_img}}" alt=""></td>
+                                <td>{{ item.product_name }}</td>
+                                <td>{{ item.product_price }}</td>
+                                <td>{{ item.quantity }}</td>
+                                <td>
+                                    <button class="btn btn-warning" (click)="increaseQty(item)">+</button>
+                                    <button class="btn btn-success" (click)="decreaseQty(item)">-</button>
+                                    <button class="btn btn-dark" (click)="deleteItem(item)">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                      </table>
+                </li>
+            </ul>
+        </div>
+        <ng-template #emptyCart>
+            <p>Your cart is empty.</p>
+        </ng-template>
+    </section>
+
+
+    
+
+<section class="popular-dishes">
+    <!-- <section *ngIf="displayCart === null" class="popular-dishes"> -->
+    <h1>Popular Dishes</h1>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+    </p>
+    <div *ngFor="let foodproducts of products" class="dishes-container">
+        <div class="dish-card">
+            <img src="http://localhost/phpclass/admin/{{foodproducts.product_img}}"
+                alt="Burger">
+            <div class="card-content">
+                <h2>{{foodproducts.product_name}}</h2>
+                <span class="price">{{foodproducts.product_price}}</span>
+                <p>{{foodproducts.product_desc}}</p>
+                <strong>Instock: <p>{{foodproducts.in_stock}}</p></strong>
+                <p>{{foodproducts.product_category}}</p>
+                <label for="quantity">Quantity:</label>
+                <input type="number" [(ngModel)]="foodproducts.quantity" min="1" value="1" />
+                <button (click)="addToCart(foodproducts)" [disabled]="foodproducts.addedTocart">{{
+                    foodproducts.addedTocart ? 'Added' : 'Add to Cart' }}</button>
+            </div>
+        </div>
+    </div>
+</section>
+

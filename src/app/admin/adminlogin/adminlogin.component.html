@@ -1,0 +1,10 @@
+<p>adminlogin works!</p>
+<main>
+    <form (ngSubmit)="onSubmit()" class="w-50 mx-auto px-4 py-3 shadow">
+        <input [(ngModel)]="user.email" class="form-control my-3" type="email" placeholder="Email" name="email">
+        <input [(ngModel)]="user.password" class="form-control my-3" type="password" placeholder="*******************"
+            name="password">
+        <button class="btn btn-success my-3" name="login">Login</button>
+        <p *ngIf="message">{{ message }}</p>
+    </form>
+</main>

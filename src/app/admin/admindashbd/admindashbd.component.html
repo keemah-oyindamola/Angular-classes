@@ -1,0 +1,64 @@
+<p>admindashbd works!</p>
+<form (ngSubmit)="onSubmit()" class="w-50 mx-auto px-4 py-3 shadow">
+    <h2>Create Product</h2>
+    <div>
+        <label for="">Product Name</label>
+        <input [(ngModel)]="products.product_name" class="form-control my-2"   type="text" name="product_name">
+    </div>
+    <div>
+        <label for="">Product Price</label>
+        <input [(ngModel)]="products.product_price" class="form-control my-2"   type="text" name="product_price">
+    </div>
+    <div>
+        <label for="">Product Catagory</label>
+        <select [(ngModel)]="products.product_category" class="form-control my-2"   name="product_category" id="">
+            <option value="Breakfast">Breakfast</option>
+            <option value="Lunch">Lunch</option>
+            <option value="Dinner">Dinner</option>
+        </select>
+    </div>
+    <div>
+        <label for="">Product Description</label>
+        <textarea [(ngModel)]="products.product_description" class="form-control my-2"   name="product_description" cols="30" rows="10" id=""></textarea>
+    </div>
+    <div>
+        <label for="">In Stock</label>
+        <input [(ngModel)]="products.in_stock" class="form-control my-2"   type="text" name="in_stock">
+    </div>
+    <div>
+        <input (change)="onFileChange($event)" type="file" name="profile" id="">
+    </div>
+    <div>
+        <button type="submit" class="btn btn-success">Create Product</button>
+    </div>
+    <p *ngIf="message">{{ message }}</p>
+</form>
+
+<div>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Category</th>
+            <th scope="col">Description</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of productsList; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ product.product_name }}</td>
+                <td>{{ product.product_price }}</td>
+                <td>{{ product.product_category }}</td>
+                <td>{{ product.product_description }}</td>
+                <td>
+                    <button class="btn btn-warning">Edit</button>
+                    <button class="btn btn-dark">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+      </table>
+</div>
+

@@ -1,0 +1,51 @@
+<p>switch works!</p>
+<div [ngSwitch]="date">
+    <div *ngSwitchCase=0>Today is Sunday, You deserve a break </div>
+    <div *ngSwitchCase=1>Today is Monday, You deserve a break</div>
+    <div *ngSwitchCase=2>Today is Tuesday, You deserve a break</div>
+    <div *ngSwitchCase=3>Today is Wednesday, You deserve a break</div>
+    <div *ngSwitchCase=4>Today is Thursday, You deserve a break</div>
+    <div *ngSwitchCase=5>Today is Friday, You deserve a break</div>
+    <div *ngSwitchCase=6>Today is Saturday, You deserve a break</div>
+    <div *ngSwitchDefault="">Cannot predict day!!!</div>
+</div>
+
+<div *ngFor="let users of alluser; ">
+    <p>{{users}}</p>
+</div>
+
+<div *ngFor="let user of userinfo.users;">
+    <p>{{user.firstName}}, {{user.lastName}}</p>
+    <a href="/oneuser/{{user.id}}">View user</a>
+</div>
+
+<section class="popular-dishes">
+    <h1>Popular Dishes</h1>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+    </p>
+    <div class="dishes-container">
+        <div *ngFor="let food of productItems, let i=index" class="dish-card">
+            <img src={{food.images}} alt="Burger">
+            <div class="card-content">
+                <h2>{{food.title}}</h2>
+                <span class="price">${{food.price}}</span>
+                <p>{{food.description}}</p>
+                <button>ORDER NOW</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<main>
+    <form (ngSubmit)="onSubmit()" class="w-50 mx-auto px-4 py-3 shadow">
+        <h1>Register</h1>
+        <input [(ngModel)]="user.firstname" class="form-control my-3"  name="first_name" type="text" placeholder="First Name">
+        <input [(ngModel)]="user.lastname" class="form-control my-3" name="last_name"  type="text" placeholder="Last Name">
+        <input [(ngModel)]="user.email" class="form-control my-3" name="email" type="email" placeholder="Email">
+        <input [(ngModel)]="user.password" class="form-control my-3" name="password"  type="text" placeholder="Password">
+        <!-- <input class="form-control my-3" name="confirm_password"  type="text" placeholder="Confirm Password"> -->
+        <button type="submit" class="btn btn-success my-3" >Register</button>
+        <p *ngIf="message">{{message}}</p>
+    </form>
+</main>

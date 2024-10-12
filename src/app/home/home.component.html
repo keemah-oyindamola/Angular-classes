@@ -1,0 +1,23 @@
+<!-- <app-navbar></app-navbar> -->
+<p>home works!</p>
+<h1>Testing css</h1>
+<h1>My name is {{name}} , my class is {{course}}</h1>
+<h3>{{info[1]}}</h3>
+
+<div *ngFor="let item of info; let i= index">
+    <h3>{{i + 1}}.{{item}}</h3>
+
+</div>
+
+<main>
+    <form (ngSubmit)="onSubmit()" class="w-50 mx-auto px-4 py-3 shadow">
+        <h1>Login</h1>
+        <input [(ngModel)]="user.email"  class="form-control my-3" name="email" type="email" placeholder="Email">
+        <input  [(ngModel)]="user.password"  class="form-control my-3" name="password"  type="text" placeholder="Password">
+        <button type="submit" class="btn btn-success my-3" >LOg in</button>
+    </form>
+    <p *ngIf="message">{{ message }}</p>
+    <!-- <p *ngIf="token">{{token}}</p> -->
+</main>
+<!-- <app-button></app-button>
+<app-todo></app-todo> -->

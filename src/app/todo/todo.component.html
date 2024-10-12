@@ -1,0 +1,78 @@
+<p>todo works!</p>
+<h1>This is my todo component</h1>
+<form action="">
+    <input name="todo" (input)="writeSomething()" [(ngModel)]="newTodo" type="text">
+    <button (click)="addTodo()">Submit</button>
+    <!-- <h1>{{newTodo}}</h1> -->
+    <h1>{{newTodo}}</h1>
+
+    <div *ngFor="let todos of allTodo; let i =index ">
+        <h2>{{i+1}}. {{todos}}</h2>
+    </div>
+</form>
+
+<!-- <form *ngIf="!displayForm" class="w-50 mx-auto shadow px-5 py-4" action="">
+    <h1>Add user information</h1> -->
+    <!-- <div *ngFor="let user of userInfo"> -->
+        <!-- <input class="form-control" [(ngModel)]="newUser.username" type="text" placeholder="Username" name="username" id="">
+        <br><br>
+        <input class="form-control"  [(ngModel)]="newUser.email" type="email" name="email" placeholder="Email Address" id="">
+        <br><br>
+        <input class="form-control"  [(ngModel)]="newUser.course" type="text" name="course" placeholder="Course" id="">
+        <br><br>
+        <input class="form-control"   [(ngModel)]="newUser.location" type="text" name="location" placeholder="Enter your location" id="">
+        <br><br> -->
+    <!-- </div> -->
+
+    <!-- <button class="btn btn-dark" type="button" (click)="addUser()">Add user</button> -->
+
+    <!-- <div *ngFor="let users of userInfo;"> -->
+    <!-- </div> -->
+<!-- </form> -->
+
+
+
+<!-- <form *ngIf="displayForm" class="w-50 mx-auto shadow px-5 py-4" action="">
+    <h1>Edit user information</h1>
+        <input class="form-control" [(ngModel)]="newUserEdit.username" type="text" placeholder="Username" name="username" id="">
+        <br><br>
+        <input class="form-control"  [(ngModel)]="newUserEdit.email" type="email" name="email" placeholder="Email Address" id="">
+        <br><br>
+        <input class="form-control"  [(ngModel)]="newUserEdit.course" type="text" name="course" placeholder="Course" id="">
+        <br><br>
+        <input class="form-control"   [(ngModel)]="newUserEdit.location" type="text" name="location" placeholder="Enter your location" id="">
+        <br><br>
+
+    <button class="btn btn-dark" type="button" (click)="editUserInfo()">Add user</button>
+
+
+</form> -->
+
+<!-- <table class="table">
+    <thead>
+     <tr>
+         <th scope="col">No.</th>
+         <th scope="col">Username</th>
+         <th scope="col">Email</th>
+         <th scope="col">Course</th>
+         <th scope="col">Location</th>
+     </tr>
+    </thead>
+    <tbody>
+         <tr *ngFor="let users of userInfo; let i =index">
+             <td>{{i+1}}</td>
+             <td>{{users.username}}</td>
+             <td>{{users.email}}</td>
+             <td>{{users.course}}</td>
+             <td>{{users.location}}</td>
+             <td>
+                 <button (click)="editUser(i)" class="btn btn-small btn-warning">Edit</button>
+                 <button (click)="delUser(i)" class="btn btn-small btn-danger">Delete</button>
+             </td>
+         </tr>
+    </tbody>
+ </table> -->
+
+ <h1>{{counter}}</h1>
+ <button (click)="addUp()">Click</button>
+ <button (click)="remove()">Unclick</button>

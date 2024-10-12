@@ -1,0 +1,75 @@
+.popular-dishes {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff;
+  }
+  
+  .popular-dishes h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  
+  .popular-dishes p {
+    font-size: 1.1em;
+    margin-bottom: 40px;
+    color: #666;
+  }
+  
+  .dishes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .dish-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    width: 250px;
+    text-align: left;
+  }
+  
+  .dish-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .dish-card .card-content {
+    padding: 20px;
+  }
+  
+  .dish-card h2 {
+    margin: 0 0 10px;
+    font-size: 1.5em;
+  }
+  
+  .dish-card .price {
+    color: #b12704;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  .dish-card p {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 0.9em;
+  }
+  
+  .dish-card button {
+    background: #b12704;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  
+  .dish-card button:hover {
+    background: #a12704;
+  }
